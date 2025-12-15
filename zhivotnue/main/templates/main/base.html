@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Мир природы{% endblock %}</title>
+
+    <!-- Подключаем Bootstrap (красивые стили) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+    <!-- ШАПКА САЙТА (меню) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="top: 10px;"> <!-- Опускаем панель -->
+    <div class="container">
+
+        <!-- Логотип - поднимаем выше -->
+        <a class="navbar-brand mb-1" href="/" style="margin-top: -8px;"> <!-- Поднимаем -->
+            <div class="d-flex align-items-center">
+                <i class="bi bi-tree-fill text-success fs-3 me-2" style="margin-top: -3px;"></i> <!-- Иконка выше -->
+                <div>
+                    <div class="fw-bold text-success" style="font-size: 1.3rem; line-height: 1; margin-bottom: 2px;">Мир</div>
+                    <div class="fw-bold text-success" style="font-size: 1.1rem; line-height: 1;">природы</div>
+                </div>
+            </div>
+        </a>
+
+            <!-- Кнопка меню -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Ссылки меню -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto" style="padding-top: 5px;"> <!-- Опускаем меню -->
+                <li class="nav-item mx-1">
+                        <a class="nav-link {% if request.path == '/' %}active text-success fw-bold{% endif %}" href="/">
+                            <i class="bi bi-house-door me-1"></i> Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/whisper/">
+                            <i class="bi bi-tree me-1"></i> Шепот леса
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/animals/">
+                            <i class="bi bi-paw me-1"></i> Животные
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/birds/">
+                            <i class="bi bi-feather me-1"></i> Птицы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/insects/">
+                            <i class="bi bi-bug me-1"></i> Насекомые
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ - здесь будет меняться содержимое страниц -->
+    <main class="container py-4">
+        {% block content %}
+        <!-- ЭТО МЕСТО ДЛЯ КОНТЕНТА КАЖДОЙ СТРАНИЦЫ -->
+        <!-- Сюда подставится контент из index.html, whisper.html и т.д. -->
+        {% endblock %}
+    </main>
+
+    <!-- ПОДВАЛ - будет на ВСЕХ страницах -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-tree-fill"></i> Мир природы</h5>
+                    <p>Сайт о красоте дикой природы</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Создано с <i class="bi bi-heart-fill text-danger"></i> для любителей природы</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

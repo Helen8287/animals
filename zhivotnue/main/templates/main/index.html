@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}  <!-- Говорим: "Используй рамку base.html" -->
+{% load static %}  <!-- Говорим: "Мы будем использовать картинки" -->
+
+{% block title %}Главная | Мир природы{% endblock %}  <!-- Меняем заголовок вкладки -->
+
+{% block content %}  <!-- Начинаем заполнять рамку контентом -->
+<!-- Добавляем отступ сверху для контента -->
+
+<!-- Пустой блок для отступа -->
+<div style="height: 20px;"></div>
+
+
+<div style="margin-top: -15px;"> <!-- Поднимаем весь контент -->
+<div class="text-center mb-3">
+    <h1 class="fw-bold text-success mb-2">
+        <i class="bi bi-globe-americas me-2"></i>Мир природы
+    </h1>
+    <p class="text-muted mb-4">Добро пожаловать! Исследуйте красоту дикого мира</p>
+</div>
+
+
+<!-- Большая красивая картинка -->
+<div class="card nature-card mb-5">
+    <img src="{% static 'main/img/красивая картинка природы.jpeg' %}"
+         class="card-img-top img-fluid"
+         alt="Природа"
+         style="height: 400px; object-fit: cover;">
+    <div class="card-body">
+        <h5 class="card-title text-success">Красота окружающего мира</h5>
+        <p class="card-text">Природа дарит нам спокойствие и вдохновение.</p>
+    </div>
+</div>
+
+<!-- Кнопки для перехода на другие страницы -->
+<div class="row text-center mb-5">
+    <div class="col-md-3 mb-3">
+        <a href="/whisper/" class="btn btn-success btn-lg w-100">
+            <i class="bi bi-tree me-2"></i>Лес
+        </a>
+    </div>
+    <div class="col-md-3 mb-3">
+        <a href="/animals/" class="btn btn-warning btn-lg w-100">
+            <i class="bi bi-paw me-2"></i>Животные
+        </a>
+    </div>
+    <div class="col-md-3 mb-3">
+        <a href="/birds/" class="btn btn-info btn-lg w-100">
+            <i class="bi bi-feather me-2"></i>Птицы
+        </a>
+    </div>
+    <div class="col-md-3 mb-3">
+        <a href="/insects/" class="btn btn-danger btn-lg w-100">
+            <i class="bi bi-bug me-2"></i>Насекомые
+        </a>
+    </div>
+</div>
+
+<!-- Приветственный текст -->
+<div class="card nature-card">
+    <div class="card-body">
+        <h4>О нашем сайте</h4>
+        <p>Здесь вы найдете информацию о:</p>
+        <ul>
+            <li><strong>Лесах</strong> - тайны и красота лесных просторов</li>
+            <li><strong>Животных</strong> - дикие обитатели лесов и полей</li>
+            <li><strong>Птицах</strong> - пернатые певцы и путешественники</li>
+            <li><strong>Насекомых</strong> - удивительный микромир</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}  <!-- Заканчиваем контент -->

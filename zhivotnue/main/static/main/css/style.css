@@ -1,0 +1,46 @@
+/* Опускаем навигационную панель и поднимаем контент */
+body {
+    padding-top: 90px !important; /* Увеличиваем отступ для навигации */
+}
+
+/* Поднимаем название сайта в навигации */
+.navbar-brand {
+    position: relative;
+    top: -5px; /* Поднимаем название выше */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Делаем навигацию ниже */
+.navbar {
+    min-height: 80px !important; /* Увеличиваем высоту навигации */
+    padding-top: 10px !important; /* Добавляем отступ сверху */
+    padding-bottom: 10px !important; /* Добавляем отступ снизу */
+}
+
+/* Поднимаем иконку в логотипе */
+.navbar-brand i {
+    position: relative;
+    top: -2px; /* Поднимаем иконку */
+}
+
+/* Уменьшаем отступы у пунктов меню */
+.nav-link {
+    padding: 5px 10px !important;
+    margin-top: 5px !important;
+}
+
+/* Для маленьких экранов */
+@media (max-width: 768px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    .navbar {
+        min-height: 70px !important;
+    }
+
+    .navbar-brand {
+        top: -3px;
+    }
+}
